@@ -1,9 +1,17 @@
-import requests
-import telebot,time
+import asyncio
+import aiohttp
+import aiofiles
 import time
-from telebot import types
-from gatet import Tele
-import os
+import re
+import base64
+from datetime import datetime
+from aiogram import Bot, Dispatcher, types, F
+from aiogram.filters import Command
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, FSInputFile
+from aiogram.fsm.storage.memory import MemoryStorage
+from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
+
 token = '8505905087:AAFNlk5FBJOXMJfxxAlE2xwC5IMMOb7M6DE' #bottoken
 bot=telebot.TeleBot(token,parse_mode="HTML")
 subscriber = '8597415233'
